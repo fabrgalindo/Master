@@ -1,0 +1,394 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<LINK REL=StyleSheet HREF="estilosTablas.css" TYPE="text/css" MEDIA=screen>
+<script type="text/javascript">
+	function soloNumeros(e){
+	var key = window.Event ? e.which : e.keyCode
+	return (key >= 48 && key <= 57)
+}
+		function dibujaLinea(form)
+		{
+			var n = document.getElementById('txtValor').value;
+			var vCaracter= document.getElementById('txtCaracter').value;
+			var vColor =form.color.value;
+			var vfuente=form.Fuente.value;
+			var text = '';
+
+			for (i=1;i<=n;i++){
+				 text = text + "<font face="+ vfuente +" color="+vColor+">"+vCaracter+"</font>";
+			}	
+			document.getElementById("pFigura").innerHTML=text;
+			
+		}
+		function dibujaCuadro(form)
+		{		
+			var n = document.getElementById('txtValor').value;
+			var vCaracter= document.getElementById('txtCaracter').value;
+			var vColor =form.color.value;
+			var vfuente=form.Fuente.value;
+			var text = '';
+
+			for (columna=1;columna<=n;columna++)
+			{
+				for (renglon=1;renglon<=n;renglon++)
+				{
+					text = text + "<font face="+ vfuente +" color="+vColor+">"+vCaracter+"</font>";
+				}
+				text = text +"<br>";
+			}
+			document.getElementById("pFigura").innerHTML=text;
+		}
+		
+		function validaTextBox(form)
+		{
+			var lvValor=document.getElementById('txtValor').value;
+			var lvCaract = document.getElementById('txtCaracter').value;
+			var lvCaractRelleno = document.getElementById('txtCaracterRelleno').value;
+			var lvalidaFigura=form.figura.value;
+			
+			if(lvValor== null || lvValor.length == 0 ) {
+				alert ("Es necesario introducir un dato en el campo Valor. ");
+				return 0;
+			}
+			else if(lvCaract== null || lvCaract.length == 0 ) {
+				alert ("Es necesario introducir un dato en el campo Caracter. ");
+				return 0;
+			}
+			else if (lvalidaFigura=='Marco'||lvalidaFigura=="Rombo" || lvalidaFigura=="MarcoRombo")
+			{
+				if(lvCaractRelleno== null || lvCaractRelleno.length == 0)
+				{
+					alert ("Es necesario introducir un dato en el campo Caracter Relleno . ");
+					return 0;
+				}
+			}
+			else{
+				return 1;
+			}
+
+		}
+	
+		function dibujaMarco(form)
+		{
+			var n = document.getElementById('txtValor').value;
+			var vCaracter= document.getElementById('txtCaracter').value;
+			var vCaracterRelleno= document.getElementById('txtCaracterRelleno').value;
+			var vColor =form.color.value;
+			var vcolorRelleno=form.colorRelleno.value;
+			var vfuente=form.Fuente.value;
+			var text = '';
+
+			for (renglon=1;renglon<=n;renglon++)
+			{
+				for (fila=1;fila<=n;fila++)
+				{
+					if(renglon==1|| renglon==n)
+					{
+						text=text+"<font face="+ vfuente +" color="+vColor+">"+vCaracter+"</font>";
+					}
+					else
+					{
+						if(fila==1|| fila==n)
+						{
+							text = text + "<font face="+ vfuente +" color="+vColor+">"+vCaracter+"</font>";
+						}
+						else
+						{
+							text = text + "<font face="+ vfuente +" color="+vcolorRelleno+">"+vCaracterRelleno+"</font>";
+						}
+					}
+				}
+				text = text +"<br>";			
+			}
+			document.getElementById("pFigura").innerHTML=text;
+		}
+		
+	function dibujaRombo(form)
+	{
+		var valor = document.getElementById('txtValor').value;
+		var vCaracter= document.getElementById('txtCaracter').value;
+		var vCaracterRelleno= document.getElementById('txtCaracterRelleno').value;
+		var vColor =form.color.value;
+		var vcolorRelleno=form.colorRelleno.value;
+		var vfuente=form.Fuente.value;
+		var text = '';
+		
+		var asteriscos=1;
+		var mitad=Math.ceil(valor/2);
+		var blancos=Math.floor(valor/2);
+		
+		if(( valor%2==1 || valor<1))
+		{
+			for (renglon=1;renglon<=mitad;renglon++)
+			{
+				for (filab=1;filab<=blancos;filab++)
+				{
+					text = text + "<font face="+ vfuente +" color="+vcolorRelleno+">"+vCaracterRelleno+"</font>";
+
+				}
+				for (filaAst=1;filaAst<=asteriscos;filaAst++)
+				{
+					text=text+"<font face="+ vfuente +" color="+vColor+">"+vCaracter+"</font>";
+
+				}
+							blancos=blancos-1;
+							asteriscos=asteriscos+2;
+				text = text +"<br>";			
+			}
+			
+			asteriscos=asteriscos-4;
+			blancos=1;
+			
+			for (renglon=mitad+1;renglon<=valor;renglon++)
+			{
+				for (filab=1;filab<=blancos;filab++)
+				{
+					text = text + "<font face="+ vfuente +" color="+vcolorRelleno+">"+vCaracterRelleno+"</font>";
+
+				}
+				for (filaAst=1;filaAst<=asteriscos;filaAst++)
+				{
+					text=text+"<font face="+ vfuente +" color="+vColor+">"+vCaracter+"</font>";
+
+				}
+							blancos=blancos+1;
+							asteriscos=asteriscos-2;
+				text = text +"<br>";			
+			}
+			document.getElementById("pFigura").innerHTML=text;
+		}
+		else
+		{
+			alert("No se pueden ingresar numeros pares ni menores a uno.")
+		}
+	}	
+
+	function dibujaMarcoRombo(form)
+	{
+		var valor = document.getElementById('txtValor').value;
+		var vCaracter= document.getElementById('txtCaracter').value;
+		var vCaracterRelleno= document.getElementById('txtCaracterRelleno').value;
+		var vColor =form.color.value;
+		var vcolorRelleno=form.colorRelleno.value;
+		var vfuente=form.Fuente.value;
+		var text = '';
+	
+		var asteriscos=1;
+		var mitad=Math.ceil(valor/2);
+		var blancos=Math.floor(valor/2);
+		
+		if(( valor%2==1 || valor<1))
+		{
+			for (renglon=1;renglon<=mitad;renglon++)
+			{
+				for (filab=1;filab<=blancos;filab++)
+				{
+					text = text + "<font face="+ vfuente +" color="+vcolorRelleno+">"+vCaracterRelleno+"</font>";
+
+				}
+				for (filaAst=1;filaAst<=asteriscos;filaAst++)
+				{
+					if(renglon==valor)
+					{
+						text=text+"<font face="+ vfuente +" color="+vColor+">"+vCaracter+"</font>";
+					}
+					else
+					{
+						if(filaAst==1|| filaAst==asteriscos)
+						{
+							text=text+"<font face="+ vfuente +" color="+vColor+">"+vCaracter+"</font>";
+						}
+						else
+						{
+							text = text + "<font face="+ vfuente +" color="+vcolorRelleno+">"+vCaracterRelleno+"</font>";
+						}
+					}	
+				}
+							blancos=blancos-1;
+							asteriscos=asteriscos+2;
+				text = text +"<br>";
+			}
+			
+			asteriscos=asteriscos-4;
+			blancos=1;
+			
+			for (renglon=mitad+1;renglon<=valor;renglon++)
+			{
+				for (filab=1;filab<=blancos;filab++)
+				{
+					text = text + "<font face="+ vfuente +" color="+vcolorRelleno+">"+vCaracterRelleno+"</font>";
+				}
+				for (filaAst=1;filaAst<=asteriscos;filaAst++)
+				{
+					if(renglon==valor)
+					{
+						text=text+"<font face="+ vfuente +" color="+vColor+">"+vCaracter+"</font>";
+					}
+					else
+					{
+						if(filaAst==1|| filaAst==asteriscos)
+						{
+							text=text+"<font face="+ vfuente +" color="+vColor+">"+vCaracter+"</font>";
+						}
+						else
+						{
+							text = text + "<font face="+ vfuente +" color="+vcolorRelleno+">"+vCaracterRelleno+"</font>";
+						}
+					}
+				}
+				blancos=blancos+1;
+				asteriscos=asteriscos-2;
+				text = text +"<br>";
+			}
+			document.getElementById("pFigura").innerHTML=text;
+		}
+		else
+		{
+			alert("No se pueden ingresar numeros pares ni menores a uno.")
+		}
+	}
+	
+	function operar(form){
+	var vfigura=form.figura.value
+	var valida=validaTextBox(form);
+
+		if(valida!=0)
+		{
+			switch(vfigura){
+
+				case 'Linea':
+					dibujaLinea(form);
+					break;
+				case 'Cuadro':
+					dibujaCuadro(form);
+					break;
+				case 'Marco':
+					dibujaMarco(form);
+					break;
+				case 'Rombo':
+					dibujaRombo(form);
+					break
+				case 'MarcoRombo':
+					dibujaMarcoRombo(form);
+					break;
+				default:
+					alert('Opcion no reconocida');
+					break;
+			}
+		}
+	}
+</script>
+	</head>
+	<body>
+		<header>
+			<H1>Fabi&aacute;n Ram&iacute;rez Galindo </H1> 
+		</header>
+						<form name="forma">		
+		<table>
+			<tr>
+				<th colspan="10">
+					Examen JS<br>
+					Uso de parametros con Java Script
+				</th>
+			</tr>
+			<tr>
+				<td>
+					  <label for="Valor">Valor:</label>
+				</td>
+				<td>
+					<input type="text" id="txtValor" onKeyPress="return soloNumeros(event)" maxlength="3"  required/>
+				</td>
+				<td>
+					<label for="Caracter">Caracter:</label>
+				</td>
+				<td>
+					<input type="text" id="txtCaracter" maxlength="1" required/>
+				</td>
+								<td>
+					<label for="Color">Color:</label>
+				</td>
+				<td>
+					<label for="lblColor">Escoge un color:</label>
+					</br>
+					<input name="color" type="color" value="#0000F0" />
+				</td>
+				<td>
+					<label for="CaracterRelleno">Caracter </br> Relleno:</label>
+				</td>
+				<td>
+					<input type="text" id="txtCaracterRelleno" maxlength="1" />
+				</td>
+				<td>
+					<label for="ColorRelleno">Color</br> Relleno:</label>
+				</td>
+				<td>
+					<label for="lblColorRelleno">Escoge un color:</label>
+					</br>
+					<input name="colorRelleno" type="color" value="#0000F0" />
+				</td>
+				
+			</tr>
+			<tr>
+				<td>
+					<label for="FigElegir">Figura a </br> elegir:</label>
+				</td>
+				<td class="izquierdo" colspan="3">
+				
+		
+						<input type="radio" name="figura" value="Linea" checked> Linea
+						<br>
+						<input type="radio" name="figura" value="Cuadro"> Cuadro
+						<br>
+						<input type="radio" name="figura" value="Marco"> Marco
+						<br>
+						<input type="radio" name="figura" value="Rombo"> Rombo
+						<br>
+						<input type="radio" name="figura" value="MarcoRombo"> Marco Rombo
+				</td>
+
+				<td>
+					<label for="Fuente">Fuente</label>
+				</td>
+				<td class="izquierdo">
+					<input type="radio" name="Fuente" value="verdana" checked> Verdana
+					<br>
+					<input type="radio" name="Fuente" value="Helvetica"> Helvetica
+					<br>
+					<input type="radio" name="Fuente" value="Courier New"> Courier New
+					<br>
+					<input type="radio" name="Fuente" value="ArialBlack"> Arial Black
+					<br>
+					<input type="radio" name="Fuente" value="Impact"> Impact
+					<br>
+				</td>
+				<td colspan="4" class="izquierdo" >
+					<input type="radio" name="Fuente" value="arial" > Arial
+					<br>
+					<input type="radio" name="Fuente" value="Trebuchet MS"> Trebuchet MS
+					<br>
+					<input type="radio" name="Fuente" value="Tahoma"> Tahoma
+					<br>
+					<input type="radio" name="Fuente" value="Georgia"> Georgia
+					<br>
+					<input type="radio" name="Fuente" value="Book Antiqua"> Book Antiqua
+				</td>					
+			</tr>
+			<tr>
+				<td colspan="10" class="izquierdo">
+					<input type="button" value="Genera" onclick="operar(this.form)" />
+
+				</td>
+			</tr>
+			<tr >
+				<td colspan="10" class="izquierdo">
+					<p id="pFigura"></p>
+
+				</td>
+			</tr>
+	
+
+		</table>
+		</form>	
+	</body>
+</html>

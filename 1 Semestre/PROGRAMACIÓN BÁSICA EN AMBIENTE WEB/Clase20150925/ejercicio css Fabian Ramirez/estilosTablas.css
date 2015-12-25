@@ -1,0 +1,33 @@
+<style type="text/css">
+
+table { 
+  border: 1px solid #333;
+  border-collapse:collapse;
+  text-align: center;
+}
+table th {
+  background: #F5F5F5 url(imagenes/fondo_gris1.jpg) repeat-x;
+}
+table th.euro {
+  background: #E6F3FF url(imagenes/euro.jpg) no-repeat left center;
+}
+table th.dolar {
+  background: #E6F3FF url(imagenes/dollar.jpg) no-repeat left center;
+}
+table th.libra {
+  background: #E6F3FF url(imagenes/libra1.gif) repeat left center;
+}
+table th.yen {
+  background: #E6F3FF url(imagenes/yen.jpg) no-repeat left center;
+}
+table th, table, td {
+  border: 1px solid #555555;  
+  text-align: center;
+}
+.color {
+  background-color:#66FFFF;
+}
+table tr:hover {
+  background: #6666FF !important;
+}
+</style>

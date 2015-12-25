@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Document Properties and Methods</title>
+
+    <script>
+        function mostrar() {
+            // propiedades y métodos propios
+            console.log("A) ");
+            console.log(Object.keys(document).sort());
+
+            // propiedades y métodos propios y heredados
+            console.log("B) ");
+            var documentPropertiesIncludeInherited = [];
+            for (var p in document) {
+                documentPropertiesIncludeInherited.push(p);
+            }
+            console.log(documentPropertiesIncludeInherited.sort());
+
+            // propiedades y métodos heredados
+            console.log("C) ");
+            var documentPropertiesOnlyInherited = [];
+            for (var p in document) {
+                if (!document.hasOwnProperty(p)) {
+                    documentPropertiesOnlyInherited.push(p);
+                }
+            }
+            console.log(documentPropertiesOnlyInherited.sort());
+
+            // propiedades y métodos propios y heredados, salida por pantalla
+            var text = '';
+            for (i = 0; i < documentPropertiesIncludeInherited.length; i++) {
+                text = text + documentPropertiesIncludeInherited[i] + '<br />';
+            }
+            document.getElementById("A").innerHTML = text;
+        }
+    </script>
+
+</head>
+<body>
+    <input type="button" value="Mostrar Porperpies and Methods" onclick="mostrar()" />
+    <hr />
+    <p id="A"></p>
+</body>
+</html>

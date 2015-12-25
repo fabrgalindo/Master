@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejemplo de estructuras if...else</title>
+</head>
+<body>
+<H1>Fabi&aacute;n Ram&iacute;rez Galindo </H1> 
+<script type="text/javascript">
+	function factorial(n)
+	{
+	   if(n == 0 || n == 1)
+		  return 1;
+		return n * factorial(n-1);
+	}
+
+	function calculaTrianguloPascal()
+	{
+		var valor = document.getElementById('a').value;
+	
+		var n=0;
+		var blancos=Math.floor(valor);
+		var C=0;
+
+		for (renglon=0;renglon<=valor;renglon++)
+		{
+			for (filab=0;filab<=blancos;filab++)
+			{
+				document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
+
+			}
+			for (r=0;r<=n;r++)
+			{
+						C=factorial(n)/(factorial(n-r)*factorial(r));
+						document.write(C);
+						document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
+			}
+						blancos=blancos-1;
+						n=n+1;
+			document.write ("<br>");
+		}	
+	}	
+
+	function operate(operation){
+		var a = document.getElementById('a').value;
+		var sumatoria =0;
+		switch(operation){
+
+			case 'perfecto':
+				for (n=0;n<a;n++)
+				{
+					if(a%n==0)
+					{
+						sumatoria=sumatoria+n;
+					}
+				}
+				if(a==sumatoria)
+				{
+					alert("El "+a+" es numero perfecto.");
+				}
+				else
+				{
+					alert("El "+a+" no es numero perfecto.");
+				}
+				break;
+			case 'pascal':
+				calculaTrianguloPascal();
+				//window.open('trianguloPascal.html');
+				//<a href="trianguloPascal.html" target="_blank">abrir en una nueva ventana o pestaña</a>
+				//newwindow=window.open("trianguloPascal.html","","width=515,height=560")
+				break;
+
+			default:
+				alert('Opcion no reconocida');
+				break;
+		}
+		
+
+
+
+
+	}
+</script>
+
+<p>Seleccione una operacion de la lista:
+<select id="operation">
+<option value="perfecto">Numero Perfecto</option>
+<option value="pascal">Triangulo de Pascal</option>
+
+</select>
+<br>
+<br>
+<input type="text" id="a" />
+<input type="button" value="Calcular" onclick="operate(document.getElementById('operation').value)" />
+</p>
+
+</body>
+</html>

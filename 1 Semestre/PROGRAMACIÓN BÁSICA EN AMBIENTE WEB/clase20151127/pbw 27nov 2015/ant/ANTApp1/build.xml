@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<project
+	name="ANTApp1"
+	default="principal">
+	
+	<target name="salida">
+		<echo> Salida Demo </echo>
+		<echo> '${mensaje}' </echo>
+	</target>
+	
+	<target name="compilar">
+		<javac srcdir="./sources" 
+			destdir="./classes" />
+		<echo>Compilacion terminada...</echo>
+	</target>
+	
+	<target	name="principal"
+		depends="compilar" >
+		<echo>Terminando proceso... </echo>
+	</target>
+
+</project>

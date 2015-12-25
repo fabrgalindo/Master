@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HTMLDocument Información general</title>
+
+<script>
+    function info() {
+        var d = document;
+        var msg = '';
+        msg = ('title = ' + d.title + '\r');
+        msg = msg + ('url = ' + d.URL + '\r');
+        msg = msg + ('referrer = ' + d.referrer + '\r');
+        msg = msg + ('lastModified = ' + d.lastModified + '\r');
+        // Informará de si es BackCompat (Quirks Mode) o CSS1Compat (Strict Mode)
+        msg = msg + ('compatibility mode = ' + d.compatMode + '\r');
+        alert(msg);
+    }
+</script>
+
+</head>
+<body>
+    <input type="button" onclick="info()" value="Información general" />
+</body>
+</html>

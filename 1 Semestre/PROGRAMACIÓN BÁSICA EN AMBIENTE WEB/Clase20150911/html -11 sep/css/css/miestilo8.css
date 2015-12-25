@@ -1,0 +1,18 @@
+
+/*Manejo de medidas de fonts*/
+
+/* Se pueden declarar los tamaños a través de 
+   palabras clave
+
+xx-small 
+x-small 
+small 
+medium 
+large 
+x-large 
+xx-large 
+*/
+
+
+P { font-size:large}
+B { font-size: larger}  /* puede ser smaller o larger */

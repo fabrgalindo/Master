@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<TITLE>Prueba de entrada</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function testResults (form) {
+    var TestVar = form.inputbox.value;
+    alert ("Ud tecleo: " + TestVar);
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM NAME="myform" ACTION="" METHOD="GET">Escriba algo dentro de la caja: <BR>
+<INPUT TYPE="text" NAME="inputbox" VALUE=""><P>
+<!--  this.form (la palabra clave  this refecia al control boton ;
+      form es una propiedad del control boton y representa al objeto form). -->
+<INPUT TYPE="button" NAME="button" Value="Presiona" onClick="testResults(this.form)">
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,38 @@
+
+<html>
+<body>
+<H1>Fabi&aacute;n Ram&iacute;rez Galindo </H1> 
+<script type="text/javascript">
+
+	function paint()
+	{
+		var n = document.getElementById('valor').value;
+		for (renglon=1;renglon<=n;renglon++)
+		{
+			for (fila=1;fila<=n;fila++)
+			{
+				if(renglon==1|| renglon==n)
+				{
+					document.write("*");
+				}
+				else
+				{
+					if(fila==1|| fila==n)
+					{
+					document.write("*");
+					}
+					else
+					{
+						document.write("#");
+					}
+				}
+			}
+			document.write ("<br>");
+		}
+	}
+</script>
+
+	<input type="text" id="valor" />
+	<input type="button" value="Calcular" onclick="paint()" />
+</body>
+</html> 

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejemplo eventos onsubmit</title>
+<script type="text/javascript">
+function verificar(){
+			var numeros="0123456789";
+			var tmp;
+			if (document.forms.formu.nombre.value==""){
+				alert("Introduzca su nombre");
+				return false;
+			}
+			if (document.forms.formu.edad.value==""){
+				alert("Introduzca su edad");
+				return false;
+			}
+			for (var i=0;i<document.forms.formu.edad.value.length;i++){
+				tmp=document.forms.formu.edad.value.substring(i,i+1)
+				if (numeros.indexOf(tmp)==-1){
+					alert("La edad debe ser en números");
+					return false;
+				}}
+			return true
+		}
+</script>
+</head>
+<body>
+<form action="" id="formu" onsubmit="verificar(this);">
+<p>Nombre: <input type="text" size="30" id="nombre" />
+<br />
+Edad: <input type="text" size="3" id="edad" />
+<br />
+<input type="submit" value="Verificar" />
+</p>
+</form>
+</body>
+</html>

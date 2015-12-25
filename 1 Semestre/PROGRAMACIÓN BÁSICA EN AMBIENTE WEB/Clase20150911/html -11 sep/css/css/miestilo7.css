@@ -1,0 +1,10 @@
+
+/*Manejo de medidas de fonts*/
+
+
+P { font-size: 20pt }
+/* Si el bold se encuentra dentro de un parrafo
+   la medida desplegada sera de 30 puntos
+*/
+B { font-size: 1.5em } 
+

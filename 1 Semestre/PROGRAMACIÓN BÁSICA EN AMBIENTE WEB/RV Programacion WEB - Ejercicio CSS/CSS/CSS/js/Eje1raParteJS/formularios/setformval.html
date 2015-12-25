@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<TITLE>Prueba de entrada </TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function readText (form) {
+    miVariable =form.inputbox.value;
+    alert ("Ud tecleo: " + miVariable);
+}
+
+
+function writeText (form) {
+    form.inputbox.value = "Que tenga un bonito dia!"
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM NAME="myform" ACTION="" METHOD="GET">
+Introduzca algo en la caja: <BR>
+<INPUT TYPE="text" NAME="inputbox" VALUE=""><P>
+<INPUT TYPE="button" NAME="button1" Value="Lee" onClick="readText(this.form)">
+<INPUT TYPE="button" NAME="button2" Value="Escribe" onClick="writeText(this.form)">
+</FORM>
+</BODY>
+</HTML>
+

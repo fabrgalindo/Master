@@ -1,0 +1,9 @@
+
+/* Uso de selectores contextuales */
+/* Convierte a rojo el texto solo si el 'bold' 
+   se encuentra dentro de un párrafo
+*/
+
+P B { color: red; font-family:"comic sans ms"} 
+
+

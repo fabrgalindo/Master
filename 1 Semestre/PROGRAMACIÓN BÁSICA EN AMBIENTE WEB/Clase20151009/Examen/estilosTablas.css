@@ -1,0 +1,21 @@
+<style type="text/css">
+
+table { 
+  border: 1px solid #555555;
+  border-collapse:collapse;
+  text-align: center;
+  	WIDTH="100%"
+
+}
+
+table, th, table, td {
+  border: 1px solid #555555;  
+  text-align: center;
+  WIDTH="100%"
+}
+
+td.izquierdo {  text-align: left;}
+.color {
+  background-color:#66FFFF;
+}
+</style>

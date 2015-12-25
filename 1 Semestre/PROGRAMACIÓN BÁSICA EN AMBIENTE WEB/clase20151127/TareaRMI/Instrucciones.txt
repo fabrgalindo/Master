@@ -1,0 +1,49 @@
+Terminal 1
+
+C:\Windows\system32>cd..
+
+C:\Windows>cd..
+
+C:\>cd rmi1
+
+C:\rmi1>javac Calculadora.java
+
+C:\rmi1>copy Calculadora.class cliente
+        1 archivo(s) copiado(s).
+
+C:\rmi1>cd cliente
+
+C:\rmi1\cliente>javac EjemploCliente.java
+
+C:\rmi1\cliente>cd ..
+
+
+
+C:\rmi1>copy Calculadora.class servidor
+        1 archivo(s) copiado(s).
+
+C:\rmi1>cd servidor
+
+C:\rmi1\servidor>javac CalculadoraImpl.java
+
+C:\rmi1\servidor>javac EjemploServidor.java
+
+C:\rmi1\servidor>rmiregistry &
+
+
+
+Terminal 2:
+C:\>cd rmi1
+
+C:\rmi1>cd servidor
+
+C:\rmi1\servidor>java -Djava.rmi.server.codebase:file//c:/rmi1/servidor/ EjemploServidor
+
+
+Terminal3:
+C:\rmi1\cliente>java EjemploCliente 0
+Suma  30 + 5 = 35
+Resta  30 - 5 = 25
+Multiplica  30 * 5 = 150
+Divide  30 / 5 = 6
+Contador peticiones: 16

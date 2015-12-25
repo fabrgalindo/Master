@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--							-->
+<project
+	name="ANTApp2"
+	default="principal"
+	basedir=".">
+	<description>
+		Segundo proyecto ejemplo en ANT, ANTApp2.
+	</description>
+	
+	<!-- esta meta fabrica carpetas para colocar	-->
+	<!-- archivos ejecutables, y librerias		-->
+	<target	name="iniciar">
+		<mkdir	dir="./build/classes" />
+		<mkdir	dir="./dist" />
+		<echo>Nuevas carpetas creadas...</echo>
+	</target>
+
+	<!-- esta meta borra los ejecutables y distri-	-->
+	<!-- bucion anteriores				-->
+	<target	name="borrar">
+		<delete	dir="./build/classes" />
+		<delete	dir="./dist" />
+		<echo>Distribucion anterior borrada...</echo>
+	</target>
+	
+	<!-- esta meta compila todos los fuentes que se	-->
+	<!-- encuentren en la carpeta sources		-->
+	<target name="compilar" depends="iniciar" >
+		<javac srcdir="./sources" 
+			destdir="./build/classes" />
+		<echo>Compilacion terminada...</echo>
+	</target>
+	
+	<!-- esta meta toma los ejecutables recien	-->
+	<!-- creados, y los compacta en un JAR		-->
+	<target	name="archivar"
+		depends="compilar" >
+		<jar	destfile="./dist/ANTApp2.jar"
+			basedir="./build/classes" />
+	</target>
+
+	<!-- aqui comenzamos el proceso, el cual con-	-->
+	<!-- siste en borrar las carpetas de ejecuta-	-->
+	<!-- bles y librerias				-->
+	<target	name="principal"
+		depends="borrar, iniciar, archivar" >
+		<echo>Terminando proceso... </echo>
+	</target>
+
+</project>

@@ -1,0 +1,8 @@
+
+         H1 { color: green; font-size: 37px; font-family: impact }
+         P { text-indent: 1cm; background: yellow; font-family:
+             courier }
+         B { color: blue }
+         P.primero { color: green; background: aqua }
+         P.segundo { color: purple; text-indent: 0cm }
+         P.tercero { color: gray; background: none } 

@@ -1,0 +1,42 @@
+IPN
+UPIICSA
+SEPI
+Programación Básica Web
+
+Segunda entrega del proyecto final
+
+Entregar una aplicación que utilice una base datos por medio de Struts 2, que contenga lo siguiente:
+
+1.- La base de datos solo contendrá una tabla, con al menos 5 atributos.
+
+2.- La aplicación debe mostrar un menú para consultar, insertar y borrar registros de la base de datos. 
+
+3.- Debe contener, por lo menos, un par de consultas: 
+    3.1.- Para un solo registro, y 
+	3.2.- Para un conjunto de registros que cumplan alguna condición.
+
+4.- Para borrar un registro se debe de pedir la clave del registro  a borrar, y antes de borrar debe de mostrar el contenido del registro y una pregunta de confirmación. Si no se encuentra, también lo debe de indicar.
+
+5.- La aplicación debe tener una buena presentación, utilizando CSS e imágenes.
+ 
+
+Notas:
+
+1)El ejercicio debe ser compilado y generado el war por medio de ANT.
+
+2)La base de datos debe ser generada por medio del script anexo. 
+	2.1) El usuario, password y el nombre de la base de datos debe ser la indicada en el script. 
+
+2.2) La tabla debe contener inicialmente por lo menos 10 registros.
+
+2.3) Todos los textos en el navegador deberán estar en español. 
+
+2.4) Se publicará el war y se ejecutará la aplicación en el servidor del profesor.
+
+2.5) Al final de la ejecución del ANT, debe de mostrar la liga de ejecución de la aplicación, por ejemplo:
+http://localhost:8080/proyecto-final/index.jsp
+
+2.6) Tomar como referencia la sección 12 de 'Struts 2 - Database Access',  del documento 'Tutorials point'.
+
+Fecha de entrega: 8 de enero 2016
+

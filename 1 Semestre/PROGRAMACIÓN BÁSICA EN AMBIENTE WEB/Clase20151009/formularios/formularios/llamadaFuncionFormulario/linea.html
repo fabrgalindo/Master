@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+<script type="text/javascript">
+
+function linea(param){
+
+var aux = '';
+
+	for(i=1;i<=param;i++){
+		aux = aux + '*';
+	}
+
+	document.write( aux );
+
+}
+
+
+</script>
+</head>
+<body>
+<h3>Ejemplo de llamada a funcion linea</h3>
+
+<input type="text" size="10" id="lineaVal"/>
+
+<input type="button" name="click" onclick="linea(document.getElementById('lineaVal').value)" value="click"/>
+</body>
+</html>

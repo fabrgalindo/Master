@@ -1,0 +1,23 @@
+<!-- http://www.javaworld.com/article/2077176/scripting-jvm-languages/using-javascript-and-forms.html -->
+
+<HTML>
+<HEAD>
+<TITLE>Prueba de Botones Radio </TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function testButton (form){
+    for (Count = 0; Count < 3; Count++) {
+        if (form.rad[Count].checked)
+            break;
+    }
+    alert ("Boton " + Count + " esta seleccionado");
+}
+</SCRIPT>
+</BODY>
+<FORM NAME="testform">
+<INPUT TYPE="button" NAME="button" Value="Click" 
+    onClick="testButton(this.form)"> <BR>
+<INPUT TYPE="radio" NAME="rad" Value="rad_button1" onClick=0><BR>
+<INPUT TYPE="radio" NAME="rad" Value="rad_button2" onClick=0><BR>
+<INPUT TYPE="radio" NAME="rad" Value="rad_button3" onClick=0><BR>
+</FORM>
+</HTML>

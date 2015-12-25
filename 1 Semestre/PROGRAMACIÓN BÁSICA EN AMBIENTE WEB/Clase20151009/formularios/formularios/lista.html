@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejemplo de estructuras if...else</title>
+</head>
+<body>
+<script type="text/javascript">
+function hola()
+{
+if (document.formulario.nombre.value=="Carlos") {
+	alert("Buenos días Carlos. Hace rato que te esperaba.");
+}
+else
+ {
+	alert("No te conozco, pero de todos modos, buenos días.");
+}}
+</script>
+<form action="" id="formulario" name="formulario">
+<p>Seleccione un nombre de la lista:
+<select name="nombre" size="1" onchange="hola();">
+<option value="Manolo">Manolo</option>
+<option value="Lucas">Lucas</option>
+<option value="Carlos">Carlos</option>
+<option value="Jose">Jos&eacute;</option>
+<option value="Javier">Javier</option>
+</select>
+</p>
+</form>
+</body>
+</html>
+
+

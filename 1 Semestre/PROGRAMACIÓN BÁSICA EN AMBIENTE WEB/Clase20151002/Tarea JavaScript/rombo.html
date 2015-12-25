@@ -1,0 +1,65 @@
+
+<html>
+<body>
+<H1>Fabi&aacute;n Ram&iacute;rez Galindo </H1> 
+<script type="text/javascript">
+	function paint()
+	{
+		var valor = document.getElementById('num').value;
+		
+		var asteriscos=1;
+		var mitad=Math.ceil(valor/2);
+		var blancos=Math.floor(valor/2);
+		
+		if(( valor%2==1 || valor<1))
+		{
+			for (renglon=1;renglon<=mitad;renglon++)
+			{
+				for (filab=1;filab<=blancos;filab++)
+				{
+					document.write("#");
+
+				}
+				for (filaAst=1;filaAst<=asteriscos;filaAst++)
+				{
+					document.write("<b>*</b>");
+
+				}
+							blancos=blancos-1;
+							asteriscos=asteriscos+2;
+				document.write ("<br>");
+			}
+			
+			asteriscos=asteriscos-4;
+			blancos=1;
+			
+			for (renglon=mitad+1;renglon<=valor;renglon++)
+			{
+				for (filab=1;filab<=blancos;filab++)
+				{
+					document.write("#");
+
+				}
+				for (filaAst=1;filaAst<=asteriscos;filaAst++)
+				{
+					document.write("<b>*</b>");
+
+				}
+							blancos=blancos+1;
+							asteriscos=asteriscos-2;
+				document.write ("<br>");
+			}
+		}
+		else
+		{
+			alert("No se pueden ingresar numeros pares ni menores a uno.")
+		}
+	}	
+</script>
+	<input type="text" id="num" />
+	<input type="button" value="Calcular" onclick="paint()" />
+</body>
+</html> 
+
+
+

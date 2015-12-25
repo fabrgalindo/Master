@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+<script type="text/javascript">
+
+function linea(param){
+
+var aux = '';
+
+	for(i=1;i<=param;i++){
+		aux = aux + '*';
+	}
+
+	document.write( aux );
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function factorial(n)
+{
+   if(n == 0 || n == 1)
+      return 1;
+	return n * factorial(n-1);
+
+}
+
+
+
+function ejecutaFuncion(n)
+{
+   document.write(factorial(n));
+}
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+<h3>Ejemplo de llamada a una funcion por medio de un formulario</h3>
+
+<input type="text" size="10" id="funcionVal"/>
+
+<input type="button" name="click" onclick="ejecutaFuncion(document.getElementById('funcionVal').value)" value="ejecuta" />
+</body>
+</html>

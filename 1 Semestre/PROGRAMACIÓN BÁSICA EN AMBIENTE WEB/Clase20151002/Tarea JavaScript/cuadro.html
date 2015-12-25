@@ -1,0 +1,26 @@
+
+<html>
+<body>
+<H1>Fabi&aacute;n Ram&iacute;rez Galindo </H1> 
+<script type="text/javascript">
+
+	function paint()
+	{		
+		var n = document.getElementById('valor').value;
+		for (columna=1;columna<=n;columna++)
+		{
+			for (renglon=1;renglon<=n;renglon++)
+			{
+				document.write("*");
+			}
+			document.write ("<br>");
+		}
+	}
+	
+		
+</script>
+
+	<input type="text" id="valor" />
+	<input type="button" value="Calcular" onclick="paint()" />
+</body>
+</html> 

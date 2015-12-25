@@ -1,0 +1,11 @@
+
+/*Manejo de medidas de fonts*/
+
+/* Se pueden declarar tambien con porcentajes */
+
+
+P { font-size: 15pt }
+/* La medida del bold sera tres veces mas que el font (45pt)*/
+/* Note como tambien cambia el titulo */
+B { font-size: 300% }
+

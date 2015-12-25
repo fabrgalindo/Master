@@ -1,0 +1,61 @@
+body  {
+      background-color:  #CCCCFF;
+      color: #000000;
+      font-family:  Comic Sans MS;
+      }
+
+p     {
+      background-color:  #AACCFF;
+      color:  #0E0E0E;
+      font-family:  Comic Sans MS;
+      }
+
+
+h1    {         
+      background-color:  #AA9988;
+      color:  #000000;
+      font-family:  Comic Sans MS;
+      }
+
+h2    {         
+      background-color:  #CCCCFF;
+      color:  #000000;
+      font-family:  Comic Sans MS;
+      }
+
+h3    {         
+      background-color:  #CCCCFF;
+      color:  #000000;
+      font-family:  Comic Sans MS;
+      }
+
+table{
+       background-color:  #BF9FBF;
+       color:  #000000;
+       font-family:  Comic Sans MS;
+       }
+
+td    {
+      background-color:  #BF9FBF;
+      color:  #000000;
+      font-family:  Comic Sans MS;
+      }
+
+tr    {
+      background-color:  #BF9FBF;
+      color:  #000000;
+      font-family:  Comic Sans MS;
+      }
+
+ul    {
+      background-color:  #CCCCFF;
+      color:  #000000;
+      font-family:  Comic Sans MS;
+      }
+
+li    {
+      background-color:  #CCCCFF;
+      color:  #000000;
+      font-family:  Comic Sans MS;
+      }                         
+                    
